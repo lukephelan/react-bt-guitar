@@ -18,7 +18,8 @@ class WebUSB extends Component {
                 return device.open();
             })
             .then(() => device.selectConfiguration(1))
-            .then(() => device.claimInterface(2))
+            .then(() => device.claimInterface(1))
+            .then(() => console.log(device))
             .then(() => device.controlTransferOut({
                 requestType: 'class',
                 recipient: 'interface',
